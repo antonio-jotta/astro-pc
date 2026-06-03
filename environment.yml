@@ -1,0 +1,20 @@
+name: astro-pc
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - matplotlib
+  - pip
+  - pillow
+  - libtiff
+  - tqdm
+  - scikit-learn
+  - pandas
+  - pip:
+      # Install torch/torchvision via pip afterwards so you can pick the right CUDA build
+      # (nightly cu128 is needed for sm_120)
+      - --pre
+      - --index-url https://download.pytorch.org/whl/nightly/cu128
+      - torch
+      - torchvision
